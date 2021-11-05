@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kadamm</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="connection">Connection</string>
+    <string name="user">User</string>
+    <string name="ranking">Ranking</string>
+</resources>
