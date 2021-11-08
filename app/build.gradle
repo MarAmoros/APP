@@ -6,8 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.kadamm"
-        minSdk 21
+        applicationId "com.example.myapplication"
+        minSdk 30
         targetSdk 31
         versionCode 1
         versionName "1.0"
