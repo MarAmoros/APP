@@ -1,27 +1,12 @@
-com/example/myapplication/databinding/FragmentNotificationsBinding.java
- com.example.myapplication.databinding.FragmentNotificationsBinding
-com/example/myapplication/ui/home/HomeFragment.java
- com.example.myapplication.ui.home.HomeFragment
- com.example.myapplication.ui.home.HomeFragment$1
-com/example/myapplication/databinding/FragmentDashboardBinding.java
- com.example.myapplication.databinding.FragmentDashboardBinding
-com/example/myapplication/BuildConfig.java
- com.example.myapplication.BuildConfig
-com/example/myapplication/databinding/ActivityMainBinding.java
- com.example.myapplication.databinding.ActivityMainBinding
-com/example/myapplication/ui/dashboard/DashboardViewModel.java
- com.example.myapplication.ui.dashboard.DashboardViewModel
-com/example/myapplication/ui/notifications/NotificationsViewModel.java
- com.example.myapplication.ui.notifications.NotificationsViewModel
-com/example/myapplication/ui/dashboard/DashboardFragment.java
- com.example.myapplication.ui.dashboard.DashboardFragment
- com.example.myapplication.ui.dashboard.DashboardFragment$1
-com/example/myapplication/databinding/FragmentHomeBinding.java
- com.example.myapplication.databinding.FragmentHomeBinding
-com/example/myapplication/ui/notifications/NotificationsFragment.java
- com.example.myapplication.ui.notifications.NotificationsFragment
- com.example.myapplication.ui.notifications.NotificationsFragment$1
-com/example/myapplication/ui/home/HomeViewModel.java
- com.example.myapplication.ui.home.HomeViewModel
-com/example/myapplication/MainActivity.java
- com.example.myapplication.MainActivity
+com/example/kadamm/FragmentRanking.java
+ com.example.kadamm.FragmentRanking
+com/example/kadamm/BuildConfig.java
+ com.example.kadamm.BuildConfig
+com/example/kadamm/FragmentUser.java
+ com.example.kadamm.FragmentUser
+com/example/kadamm/FragmentConn.java
+ com.example.kadamm.FragmentConn
+com/example/kadamm/MainActivity.java
+ com.example.kadamm.MainActivity
+ com.example.kadamm.MainActivity$1
+ com.example.kadamm.MainActivity$2

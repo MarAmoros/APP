@@ -1,10 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="connection">Connection</string>
-    <string name="user">User</string>
-    <string name="ranking">Ranking</string>
-    <string name="connect">Connect</string>
+    <string name="app_name">Kadamm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

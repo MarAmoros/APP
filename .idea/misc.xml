@@ -3,13 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/drawable/ic_connection.xml" value="0.2703125" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/drawable/ic_ranking.xml" value="0.2703125" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/drawable/ic_user.xml" value="0.2703125" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/mexay/Documents/Kadoom/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_connection.xml" value="0.2703125" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_ranking.xml" value="0.2703125" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_user.xml" value="0.2703125" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/fragment_conn.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/fragment_user.xml" value="0.1" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/menu/bottom_navigation.xml" value="0.264" />
       </map>
     </option>
   </component>
