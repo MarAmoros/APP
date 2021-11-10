@@ -30,32 +30,10 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         loadFragment(fragmentConn);
-        changeImage();
-        Button button_conn = findViewById(R.id.button_conn);
-        try {
-            changeImage();
-            button_conn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        changeImage();
-                    } catch (Exception E) {
 
-                        Context context = getApplicationContext();
-                        Toast.makeText(context, "No has introducido el numero", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }catch (Exception e){
-            Context context = getApplicationContext();
-            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
-        }
     }
 
-    private void changeImage() {
-        ImageView img= (ImageView) findViewById(R.id.trafic_light);
-        img.setImageResource(R.drawable.yellow);
-    }
+
 
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
