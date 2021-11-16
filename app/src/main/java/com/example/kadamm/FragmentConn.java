@@ -2,9 +2,13 @@ package com.example.kadamm;
 
 
 import android.os.AsyncTask;
+
+import java.io.FileReader;
 import java.io.IOException;
 import lipermi.handler.CallHandler;
 import lipermi.net.Client;
+import java.io.File;
+import java.util.Scanner;
 
 import android.os.Bundle;
 
@@ -38,7 +42,9 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
 
     private Button button_conn;
     private ImageView trafic_light;
-    private EditText ip_text;
+    private EditText ip_text, nickname;
+    private View view;
+    private String nombre, data;
 
     public FragmentConn() {
         // Required empty public constructor
@@ -74,16 +80,14 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view  = inflater.inflate(R.layout.fragment_conn, container, false);
+        view  = inflater.inflate(R.layout.fragment_conn, container, false);
         // Inflate the layout for this fragment
         trafic_light = view.findViewById(R.id.trafic_light);
         ip_text = view.findViewById(R.id.ip_text);
         button_conn = view.findViewById(R.id.button_conn);
-
         button_conn.setOnClickListener(this);
         return view;
     }
-
     @Override
     public void onClick(View view) {
 
@@ -102,15 +106,22 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
         protected FragmentConn doInBackground(Void... params) {
             Looper.prepare();
             try {
+                File file = new File(getContext().getFilesDir(), "mydir");
+                File Nick = new File(file, "nickname");
+                Scanner myReader = new Scanner(Nick);
+                while (myReader.hasNextLine()) {
+                    data = myReader.nextLine();
+                    nombre = data;
+                }
+                myReader.close();
                 CallHandler callHandler = new CallHandler();
                 Client client = new Client(ip_text.getText().toString(), 2324, callHandler);
                 TestService testService = (TestService) client.getGlobal(TestService.class);
                 String mesage = testService.getResponse("si");
-                //Toast.makeText(MainActivity.this, testService.getResponse("abc"), Toast.LENGTH_SHORT).show();
-                Log.i("Mensaje:", getContext().toString() );
                 Toast.makeText(getContext(), mesage, Toast.LENGTH_LONG).show();
                 changeColor(R.drawable.yellow);
-                client.close();
+                testService.getName(nombre);
+                //client.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
