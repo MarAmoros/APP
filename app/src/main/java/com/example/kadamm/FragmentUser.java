@@ -1,12 +1,21 @@
 package com.example.kadamm;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +32,9 @@ public class FragmentUser extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private String nombre, data;
+    public EditText editText;
 
     public FragmentUser() {
         // Required empty public constructor
@@ -55,10 +67,54 @@ public class FragmentUser extends Fragment {
         }
     }
 
+    public void Nombre(View view) {
+        try {
+            File file = new File(getContext().getFilesDir(), "mydir");
+            File Nick = new File(file, "nickname");
+            Scanner myReader = new Scanner(Nick);
+            while (myReader.hasNextLine()) {
+                data = myReader.nextLine();
+                nombre = data;
+            }
+            editText = (EditText) view.findViewById(R.id.editTextTextPersonName);
+            editText.setText(nombre);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void createtxt(String text) {
+        File dir = new File(getContext().getFilesDir(), "mydir");
+        int duration = Toast.LENGTH_SHORT;
+        if(!dir.exists()){
+            dir.mkdir();
+        }
+
+        try {
+            String nickname = "nickname";
+            File gpxfile = new File(dir, nickname);
+            FileWriter writer = new FileWriter(gpxfile);
+            writer.append(text);
+            writer.flush();
+            writer.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        int duration = Toast.LENGTH_SHORT;
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
+        Nombre(view);
+        final Button button = view.findViewById(R.id.button);
+        button.setOnClickListener(v -> {
+            EditText nick = view.findViewById(R.id.editTextTextPersonName);
+            String text = nick.getText().toString();
+            Toast.makeText(getContext(), "El numero que has posat es massa gran", duration).show();
+            createtxt(text);
+        });
+        return view;
     }
 }
