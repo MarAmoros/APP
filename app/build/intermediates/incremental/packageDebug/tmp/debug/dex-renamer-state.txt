@@ -1,4 +1,4 @@
-#Wed Nov 10 09:25:46 CET 2021
+#Wed Nov 17 09:52:04 CET 2021
 base.2=C\:\\Users\\mexay\\Documents\\Proyecto_kahoot\\APP\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.2=1/classes.dex
 base.1=C\:\\Users\\mexay\\Documents\\Proyecto_kahoot\\APP\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

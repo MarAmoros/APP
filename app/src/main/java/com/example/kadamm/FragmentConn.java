@@ -105,9 +105,8 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
                 CallHandler callHandler = new CallHandler();
                 Client client = new Client(ip_text.getText().toString(), 2324, callHandler);
                 TestService testService = (TestService) client.getGlobal(TestService.class);
-                String mesage = testService.getResponse("si");
+                String mesage = testService.getResponse("Correct connection");
                 //Toast.makeText(MainActivity.this, testService.getResponse("abc"), Toast.LENGTH_SHORT).show();
-                Log.i("Mensaje:", getContext().toString() );
                 Toast.makeText(getContext(), mesage, Toast.LENGTH_LONG).show();
                 changeColor(R.drawable.yellow);
                 client.close();
