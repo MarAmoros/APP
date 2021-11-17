@@ -28,7 +28,7 @@
         android:layout_height="68dp"
         android:ems="10"
         android:inputType="number"
-        android:digits="123456789."
+        android:digits="1234567890."
         android:maxLength="15"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
