@@ -1935,6 +1935,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id button
 id buttonPanel
 id button_conn
 id cache_measures
@@ -2008,6 +2009,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editTextTextPersonName
 id edit_query
 id elastic
 id end
@@ -2055,6 +2057,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id info
@@ -2266,6 +2269,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
