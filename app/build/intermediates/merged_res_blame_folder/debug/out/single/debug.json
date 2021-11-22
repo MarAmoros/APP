@@ -72,6 +72,10 @@
         "source": "F:\\ProyectoKahoot\\APP test\\app\\src\\main\\res\\layout\\fragment_ranking.xml"
     },
     {
+        "merged": "F:\\ProyectoKahoot\\APP test\\app\\build\\intermediates\\merged_res\\debug\\layout_popuser.xml.flat",
+        "source": "F:\\ProyectoKahoot\\APP test\\app\\src\\main\\res\\layout\\popuser.xml"
+    },
+    {
         "merged": "F:\\ProyectoKahoot\\APP test\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "F:\\ProyectoKahoot\\APP test\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },

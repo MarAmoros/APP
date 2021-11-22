@@ -1,9 +1,9 @@
 package com.example.kadamm;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 
-import java.io.FileReader;
 import java.io.IOException;
 import lipermi.handler.CallHandler;
 import lipermi.net.Client;
@@ -90,9 +90,23 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
     }
     @Override
     public void onClick(View view) {
-
-
-        new Conn().execute();
+        changeColor(R.drawable.yellow);
+        try {
+            File file = new File(getContext().getFilesDir(), "mydir");
+            File Nick = new File(file, "nickname");
+            Scanner myReader = new Scanner(Nick);
+            while (myReader.hasNextLine()) {
+                data = myReader.nextLine();
+                nombre = data;
+            }
+            myReader.close();
+            new Conn().execute();
+        } catch (Exception e) {
+            changeColor(R.drawable.red);
+            Toast.makeText(getContext(),"no hay nombre seleccionado",Toast.LENGTH_LONG).show();
+            Intent myintent = new Intent(getContext(), PopUser.class);
+            startActivity(myintent);
+        }
     }
 
     private void changeColor(int color) {
@@ -104,32 +118,18 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
 
         @Override
         protected FragmentConn doInBackground(Void... params) {
-            Looper.prepare();
             try {
-                File file = new File(getContext().getFilesDir(), "mydir");
-                File Nick = new File(file, "nickname");
-                Scanner myReader = new Scanner(Nick);
-                while (myReader.hasNextLine()) {
-                    data = myReader.nextLine();
-                    nombre = data;
-                }
-                myReader.close();
                 CallHandler callHandler = new CallHandler();
                 Client client = new Client(ip_text.getText().toString(), 2324, callHandler);
                 TestService testService = (TestService) client.getGlobal(TestService.class);
-                String mesage = testService.getResponse("si");
-                Toast.makeText(getContext(), mesage, Toast.LENGTH_LONG).show();
-                changeColor(R.drawable.yellow);
+                changeColor(R.drawable.green);
                 testService.getName(nombre);
                 //client.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                changeColor(R.drawable.red);;
             }
-            Looper.loop();
             return null;
         }
 
     }
-
-
 }

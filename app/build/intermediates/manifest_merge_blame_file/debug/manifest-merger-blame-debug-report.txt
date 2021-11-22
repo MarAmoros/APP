@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="30"
+8        android:minSdkVersion="29"
 8-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
 9-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@
 12-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:5:22-76
 13
 14    <application
-14-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:7:5-23:19
+14-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:7:5-26:19
 15        android:allowBackup="true"
 15-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:8:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -53,6 +53,13 @@
 31-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:20:27-74
 32            </intent-filter>
 33        </activity>
-34    </application>
-35
-36</manifest>
+34        <activity
+34-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:23:9-25:20
+35            android:name="com.example.kadamm.PopUser"
+35-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:23:19-42
+36            android:theme="@style/AppTheme.CustomTheme" >
+36-->F:\ProyectoKahoot\APP test\app\src\main\AndroidManifest.xml:24:13-56
+37        </activity>
+38    </application>
+39
+40</manifest>

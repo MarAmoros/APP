@@ -112,8 +112,12 @@ public class FragmentUser extends Fragment {
         button.setOnClickListener(v -> {
             EditText nick = view.findViewById(R.id.editTextTextPersonName);
             String text = nick.getText().toString();
-            Toast.makeText(getContext(), "El numero que has posat es massa gran", duration).show();
-            createtxt(text);
+            if (text.replace(" ", "").equals("")){
+                File dir = new File(getContext().getFilesDir(), "mydir");
+                dir.delete();
+            } else {
+                createtxt(text);
+            }
         });
         return view;
     }
