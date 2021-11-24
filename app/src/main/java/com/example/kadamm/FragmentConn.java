@@ -132,6 +132,8 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
             con.execute();
         } catch (Exception e) {
             e.printStackTrace();
+            Intent myintent = new Intent(getContext(), PopUser.class);
+            startActivity(myintent);
             // Error("No hay nombre");
         }
     }
