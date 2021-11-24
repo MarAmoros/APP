@@ -1,22 +1,22 @@
-com/example/kadamm/PopUser.java
- com.example.kadamm.PopUser
+com/example/kadamm/MainActivity.java
+ com.example.kadamm.MainActivity
+ com.example.kadamm.MainActivity$1
 com/example/kadamm/TestService.java
  com.example.kadamm.TestService
-com/example/kadamm/Answ_2.java
- com.example.kadamm.Answ_2
+com/example/kadamm/FragmentRanking.java
+ com.example.kadamm.FragmentRanking
 com/example/kadamm/BuildConfig.java
  com.example.kadamm.BuildConfig
 com/example/kadamm/FragmentUser.java
  com.example.kadamm.FragmentUser
-com/example/kadamm/FragmentRanking.java
- com.example.kadamm.FragmentRanking
-com/example/kadamm/Answ_4.java
- com.example.kadamm.Answ_4
 com/example/kadamm/Answ_3.java
  com.example.kadamm.Answ_3
-com/example/kadamm/MainActivity.java
- com.example.kadamm.MainActivity
- com.example.kadamm.MainActivity$1
+com/example/kadamm/PopUser.java
+ com.example.kadamm.PopUser
+com/example/kadamm/Answ_4.java
+ com.example.kadamm.Answ_4
+com/example/kadamm/Answ_2.java
+ com.example.kadamm.Answ_2
 com/example/kadamm/FragmentConn.java
  com.example.kadamm.FragmentConn
  com.example.kadamm.FragmentConn$1
