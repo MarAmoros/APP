@@ -9,6 +9,8 @@ import android.content.Intent;
 import java.io.IOException;
 import lipermi.handler.CallHandler;
 import lipermi.net.Client;
+import rmi.TestService;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -109,21 +111,7 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
         button_conn = view.findViewById(R.id.button_conn);
         button_conn.setOnClickListener(this);
         mHandler = new Handler();
-        b1 = view.findViewById(R.id.button9);
-        b2 = view.findViewById(R.id.button13);
-        b3 = view.findViewById(R.id.button14);
-        b1.setOnClickListener(v -> {
-            Intent myintent = new Intent(getContext(), Answ_2.class);
-            startActivity(myintent);
-        });
-        b2.setOnClickListener(v -> {
-            Intent myintent = new Intent(getContext(), Answ_3.class);
-            startActivity(myintent);
-        });
-        b3.setOnClickListener(v -> {
-            Intent myintent = new Intent(getContext(), Answ_4.class);
-            startActivity(myintent);
-        });
+
         return view;
     }
     @Override
@@ -175,43 +163,48 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
                         start = testService.isStarted();
                         Thread.sleep(500);
                     }
-                    while (!finish) {
-                        seguir = false;
-                        ArrayList<String> myArray = testService.GetAnswers(nump);
-                        tiempoEspera = testService.getTime();
-                        Log.e("Tamaño", String.valueOf(tiempoEspera));
+                    try{
+                        while (!finish) {
+                            seguir = false;
+                            ArrayList<String> myArray = testService.GetAnswers(nump);
+                            tiempoEspera = testService.getTime();
+                            Log.e("Tamaño", String.valueOf(myArray.size()));
                         /*if(nump == 0){
                             Intent myintent2 = new Intent(getContext(), Esperando.class);
                             startActivityForResult(myintent2, LAUNCH_SECOND_ACTIVITY);
                         }*/
-                        if (myArray.size() == 2) {
-                            Intent myintent = new Intent(getContext(), Answ_2.class);
-                            myintent.putExtra("tiempo", tiempoEspera);
-                            myintent.putExtra("preguntas", myArray);
-                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
-                        } else if (myArray.size() == 3) {
-                            Intent myintent = new Intent(getContext(), Answ_3.class);
-                            myintent.putExtra("tiempo", tiempoEspera);
-                            myintent.putExtra("preguntas", myArray);
-                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
-                        } else if (myArray.size() == 4) {
-                            Intent myintent = new Intent(getContext(), Answ_4.class);
-                            myintent.putExtra("tiempo", tiempoEspera);
-                            myintent.putExtra("preguntas", myArray);
-                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
-                        }
-                        while (!seguir) {
-                            seguir = testService.getSeguir();
-                            Thread.sleep(500);
-                            if (seguir) {
-                                test = test + 1;
-                                testService.RespuestaJugador(respuesta);
-                                Thread.sleep(500);
+
+                            if (myArray.size() == 2) {
+                                Intent myintent = new Intent(getContext(), Answ_2.class);
+                                myintent.putExtra("tiempo", tiempoEspera);
+                                myintent.putExtra("preguntas", myArray);
+                                startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
+                            } else if (myArray.size() == 3) {
+                                Intent myintent = new Intent(getContext(), Answ_3.class);
+                                myintent.putExtra("tiempo", tiempoEspera);
+                                myintent.putExtra("preguntas", myArray);
+                                startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
+                            } else if (myArray.size() == 4) {
+                                Intent myintent = new Intent(getContext(), Answ_4.class);
+                                myintent.putExtra("tiempo", tiempoEspera);
+                                myintent.putExtra("preguntas", myArray);
+                                startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
                             }
+                            while (!seguir) {
+                                seguir = testService.getSeguir();
+                                Thread.sleep(500);
+                                if (seguir) {
+                                    test = test + 1;
+                                    testService.RespuestaJugador(respuesta , tiempo, nombre);
+                                    Thread.sleep(500);
+                                }
+                            }
+                            nump++;
                         }
-                        nump++;
+                    } catch (Exception e) {
+                        //
                     }
-                }
+                    }
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
                 changeColor(R.drawable.red);

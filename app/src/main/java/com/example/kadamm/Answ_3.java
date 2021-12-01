@@ -14,6 +14,7 @@ import java.util.TimerTask;
 public class Answ_3 extends Activity {
     int tiempo;
     boolean seguir;
+    int cd;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class Answ_3 extends Activity {
         button2.setText(values.get(1));
         button3.setText(values.get(2));
         textView.setText(String.valueOf(tiempo));
-        int cd = tiempo *1000;
+         cd = tiempo *1000;
         new CountDownTimer(cd, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -42,6 +43,19 @@ public class Answ_3 extends Activity {
             @Override
             public void onFinish() {
                 finish();
+            }
+        }.start();
+
+        new CountDownTimer(cd, 1) {
+
+            public void onTick(long millisUntilFinished) {
+                cd = cd -1;
+                textView.setText(String.valueOf(tiempo));
+            }
+
+            @Override
+            public void onFinish() {
+
             }
         }.start();
 

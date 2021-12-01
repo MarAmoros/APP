@@ -1,4 +1,4 @@
-package com.example.kadamm;
+package rmi;
 
 
 import java.util.ArrayList;
@@ -11,5 +11,6 @@ public interface TestService {
     public int getTime();
     public boolean getSeguir();
     public boolean setSeguir (boolean s);
-    public void RespuestaJugador (String resp);
+    public void RespuestaJugador(String s, String respuesta, String resp);
+
 }

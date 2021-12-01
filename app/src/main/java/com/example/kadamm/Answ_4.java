@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class Answ_4 extends Activity {
     int tiempo;
+    int cd;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class Answ_4 extends Activity {
 
         ArrayList<String> values = preguntas.getStringArrayList("preguntas");
         tiempo = preguntas.getInt("tiempo");
-        int cd = tiempo *1000;
+         cd = tiempo *1000;
         new CountDownTimer(cd, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -40,6 +41,19 @@ public class Answ_4 extends Activity {
             @Override
             public void onFinish() {
                 finish();
+            }
+        }.start();
+
+        new CountDownTimer(cd, 1) {
+
+            public void onTick(long millisUntilFinished) {
+                cd = cd -1;
+                textView.setText(String.valueOf(tiempo));
+            }
+
+            @Override
+            public void onFinish() {
+
             }
         }.start();
 

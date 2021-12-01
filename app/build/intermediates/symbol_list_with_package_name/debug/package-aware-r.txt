@@ -1940,8 +1940,6 @@ id button
 id button10
 id button11
 id button12
-id button13
-id button14
 id button2
 id button3
 id button4
@@ -1949,7 +1947,6 @@ id button5
 id button6
 id button7
 id button8
-id button9
 id buttonPanel
 id button_conn
 id cache_measures
