@@ -18,7 +18,7 @@
 12-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:5:22-76
 13
 14    <application
-14-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:7:5-32:19
+14-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:7:5-34:19
 15        android:allowBackup="true"
 15-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:8:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -72,6 +72,10 @@
 42-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:30:9-31:20
 42-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:30:19-41
 43        </activity>
-44    </application>
-45
-46</manifest>
+44        <activity android:name="com.example.kadamm.Esperando" >
+44-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:32:9-33:20
+44-->C:\Users\mexay\Documents\Proyecto_kahoot\APP\app\src\main\AndroidManifest.xml:32:19-44
+45        </activity>
+46    </application>
+47
+48</manifest>

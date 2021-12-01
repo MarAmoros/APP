@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_2.xml" value="0.25" />
-        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_3.xml" value="0.19882246376811594" />
-        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_4.xml" value="0.19882246376811594" />
-        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/fragment_conn.xml" value="0.22" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/activity_main.xml" value="0.215625" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_2.xml" value="0.14" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_3.xml" value="0.2" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/answ_4.xml" value="0.1" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/equisde.xml" value="0.215625" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/esperando.xml" value="0.215625" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/fragment_conn.xml" value="0.215625" />
+        <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/fragment_ranking.xml" value="0.215625" />
         <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/fragment_user.xml" value="0.18" />
         <entry key="..\:/ProyectoKahoot/APP test/app/src/main/res/layout/popuser.xml" value="0.2" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_connection.xml" value="0.2703125" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_ranking.xml" value="0.2703125" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/drawable/ic_user.xml" value="0.2703125" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/answ_2.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/answ_3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/answ_4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/esperando.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/fragment_conn.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/fragment_ranking.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mexay/Documents/Proyecto_kahoot/APP/app/src/main/res/layout/fragment_user.xml" value="0.1" />

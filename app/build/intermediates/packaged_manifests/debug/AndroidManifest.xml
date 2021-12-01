@@ -41,6 +41,8 @@
         </activity>
         <activity android:name="com.example.kadamm.Answ_2" >
         </activity>
+        <activity android:name="com.example.kadamm.Esperando" >
+        </activity>
     </application>
 
 </manifest>
