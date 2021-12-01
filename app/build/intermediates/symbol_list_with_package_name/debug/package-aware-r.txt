@@ -1242,6 +1242,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple
 color purple_200
 color purple_500
 color purple_700
@@ -2284,10 +2285,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView2
 id textView3
-id textView4
-id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2423,6 +2421,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout esperando
 layout fragment_conn
 layout fragment_ranking
 layout fragment_user

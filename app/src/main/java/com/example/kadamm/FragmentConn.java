@@ -1,6 +1,7 @@
 package com.example.kadamm;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import lipermi.handler.CallHandler;
 import lipermi.net.Client;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import android.os.AsyncTask;
@@ -25,6 +27,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import javax.xml.transform.Result;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,12 +50,22 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
     private ImageView trafic_light;
     private EditText ip_text, nickname;
     private View view;
-    private String nombre, data;
+    private String nombre, data, respuesta;
     Runtime runtime = Runtime.getRuntime();
     private int mInterval = 3000; // 5 seconds by default, can be changed later
     private Handler mHandler;
     private Conn con;
-
+    public CallHandler callHandler;
+    public Client client;
+    public TestService testService;
+    boolean start = false;
+    boolean finish = false;
+    boolean seguir = false;
+    int tiempoEspera;
+    public int nump = 0;
+    int test = 0;
+    int LAUNCH_SECOND_ACTIVITY = 1;
+    String tiempo;
 
 
     public FragmentConn() {
@@ -132,8 +146,6 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
             con.execute();
         } catch (Exception e) {
             e.printStackTrace();
-            Intent myintent = new Intent(getContext(), PopUser.class);
-            startActivity(myintent);
             // Error("No hay nombre");
         }
     }
@@ -148,70 +160,77 @@ public class FragmentConn extends Fragment implements View.OnClickListener {
         @Override
         protected FragmentConn doInBackground(Void... params) {
             try {
-                Log.e("", "aaaaaaa");
-                CallHandler callHandler = new CallHandler();
-                Client client = new Client(ip_text.getText().toString(), 2324, callHandler);
-                TestService testService = (TestService) client.getGlobal(TestService.class);
+                callHandler = new CallHandler();
+                client = new Client(ip_text.getText().toString(), 2324, callHandler);
+                testService = (TestService) client.getGlobal(TestService.class);
                 boolean nametest = testService.getName(nombre);
                 if (!nametest) {
                     client.close();
                     changeColor(R.drawable.red);
                     Intent myintent = new Intent(getContext(), PopUser.class);
                     startActivity(myintent);
-                    startRepeatingTask();
                 } else {
                     changeColor(R.drawable.green);
+                    while (!start) {
+                        start = testService.isStarted();
+                        Thread.sleep(500);
+                    }
+                    while (!finish) {
+                        seguir = false;
+                        ArrayList<String> myArray = testService.GetAnswers(nump);
+                        tiempoEspera = testService.getTime();
+                        Log.e("Tamaño", String.valueOf(tiempoEspera));
+                        /*if(nump == 0){
+                            Intent myintent2 = new Intent(getContext(), Esperando.class);
+                            startActivityForResult(myintent2, LAUNCH_SECOND_ACTIVITY);
+                        }*/
+                        if (myArray.size() == 2) {
+                            Intent myintent = new Intent(getContext(), Answ_2.class);
+                            myintent.putExtra("tiempo", tiempoEspera);
+                            myintent.putExtra("preguntas", myArray);
+                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
+                        } else if (myArray.size() == 3) {
+                            Intent myintent = new Intent(getContext(), Answ_3.class);
+                            myintent.putExtra("tiempo", tiempoEspera);
+                            myintent.putExtra("preguntas", myArray);
+                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
+                        } else if (myArray.size() == 4) {
+                            Intent myintent = new Intent(getContext(), Answ_4.class);
+                            myintent.putExtra("tiempo", tiempoEspera);
+                            myintent.putExtra("preguntas", myArray);
+                            startActivityForResult(myintent, LAUNCH_SECOND_ACTIVITY);
+                        }
+                        while (!seguir) {
+                            seguir = testService.getSeguir();
+                            Thread.sleep(500);
+                            if (seguir) {
+                                test = test + 1;
+                                testService.RespuestaJugador(respuesta);
+                                Thread.sleep(500);
+                            }
+                        }
+                        nump++;
+                    }
                 }
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
                 changeColor(R.drawable.red);
             }
             return null;
         }
     }
-    Runnable mStatusChecker = new Runnable() {
-        @Override
-        public void run() {
-            try {
-                Process  mIpAddrProcess = runtime.exec("/system/bin/ping -c " + ip_text.getText().toString());
-                int mExitValue = mIpAddrProcess.waitFor();
-                Log.e("1:", " mExitValue "+mExitValue);
-                mHandler.postDelayed(mStatusChecker, mInterval);
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-                Log.e("1:", "No va");
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == LAUNCH_SECOND_ACTIVITY) {
+            if(resultCode == Activity.RESULT_OK){
+                respuesta=data.getStringExtra("result");
+                tiempo=data.getStringExtra("tiempo");
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                // Write your code if there's no result
             }
         }
-    };
-    void startRepeatingTask() {
-        mStatusChecker.run();
     }
-
-    void stopRepeatingTask() {
-        mHandler.removeCallbacks(mStatusChecker);
-    }
-    //public void Error(String error) {
-    //    changeColor(R.drawable.red);
-    //
-    //}
-    /*public void Error(String error) {
-        Looper.prepare();
-        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        alert.setTitle("Error!");
-        alert.setMessage(error);
-        alert.setPositiveButton(
-                "Ok!",
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int i) {
-                        if (error == "Nombre repetido") {
-                            Intent myintent = new Intent(getContext(), PopUser.class);
-                            startActivity(myintent);
-                        }
-                        dialog.cancel();
-                    }
-                });
-        alert.show();
-        Looper.loop();
-    }*/
 }
