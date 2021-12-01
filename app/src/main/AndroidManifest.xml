@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".Answ_2">
         </activity>
+        <activity android:name=".Esperando">
+        </activity>
     </application>
 
 </manifest>
